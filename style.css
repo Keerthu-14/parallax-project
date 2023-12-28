@@ -1,0 +1,50 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+.bg{
+    width: 100vw;
+    height: 130vh;
+    background-image: url(parallax-ice-berg.jpg);
+    background-size: cover;
+    background-position: bottom;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+#text{
+    font-size: 120px;
+    color: white;
+    text-transform: uppercase;
+    opacity: 0.6;
+}
+.fog{
+    position: absolute;
+    width:100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+.fog img{
+    position: absolute;
+    bottom: 0;
+    max-width: 100%;
+    animation: fog-effect calc(3s * var(--i)) ease-in infinite;
+}
+@keyframes fog-effect {
+    0%{
+        opacity: 0;
+        transform: scale(1);
+    }
+    25%,75%{
+        opacity: 1;
+    }
+    100%{
+        transform: scale(3);
+        opacity: 0;
+    }
+}
